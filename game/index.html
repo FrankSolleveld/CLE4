@@ -33,6 +33,7 @@ var game = new Phaser.Game(config);
 
 function preload ()
 { 
+    //laad images in
     this.load.image('background', 'assets/background1.jpg');
     this.load.image('ground', 'assets/ground.png');
     this.load.spritesheet('player', 'assets/player.png', {frameWidth: 125, frameHeight: 119});
@@ -40,8 +41,9 @@ function preload ()
 
 function create ()
 {
+    //voegt achtergrond toe
     this.add.image(400, 300, 'background');
-
+    //vroegt ondergrond met physics toe
     platforms = this.physics.add.staticGroup();
     platforms.create(300, 468, 'ground').setScale(0.5).refreshBody();
 
@@ -52,7 +54,7 @@ function create ()
     frameRate: 2,
     repeat: -1
    };
-
+   // maaktt player aan met animatie
     this.anims.create(config);
     player = this.physics.add.sprite(200, 200, 'player');
     player.anims.play('breath');
@@ -63,6 +65,7 @@ function create ()
     //  Player physics 
     player.setCollideWorldBounds(true);
     this.physics.add.collider(player, platforms);
+   // this.world.setBounds(-1000, -1000, 2000, 2000);
 
     // zet keyinput in var
     Akey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -73,14 +76,14 @@ function create ()
 }  
 function update ()
 {
-    var jump = 0;
-      
+    //beweegt naar links als a gedrukt is
     if (Akey.isDown)
     {
         player.setVelocityX(-160);
         player.flipX = true;
 
     }
+    //beweegt naar rechts als d is in gedrukt
     else if (Dkey.isDown)
     {
         player.setVelocityX(160);
@@ -91,10 +94,10 @@ function update ()
         player.setVelocityX(0);
 
     }
-    if (Wkey.isDown && player.body.touching.down && jump == 0)
+    //springt als w is ingedrukt
+    if (Wkey.isDown && player.body.touching.down)
     {
         player.setVelocityY(-330);
-        jump = 0;
     }   
 } 
 
