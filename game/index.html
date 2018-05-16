@@ -8,8 +8,8 @@
     <script>
 var config = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 600,
+    width: 1280,
+    height: 720,
     physics: {
         default: 'arcade',
         arcade: {
@@ -30,75 +30,120 @@ var WKey;
 var Skey;
 var DKey;
 var game = new Phaser.Game(config);
+var afro;
+var afroStill;
+var aapStill;
 
 function preload ()
 { 
     //laad images in
     this.load.image('background', 'assets/background1.jpg');
     this.load.image('ground', 'assets/ground.png');
+    this.load.image('idle', 'assets/idle.png');
     this.load.spritesheet('player', 'assets/player.png', {frameWidth: 125, frameHeight: 119});
+    this.load.spritesheet('afro', 'assets/afrochick.png',{frameWidth: 174, frameHeight: 200})
 }
-
 function create ()
 {
-    //voegt achtergrond toe
-    this.add.image(400, 300, 'background');
-    //vroegt ondergrond met physics toe
-    platforms = this.physics.add.staticGroup();
-    platforms.create(300, 468, 'ground').setScale(0.5).refreshBody();
 
-   // maakt animatie aan en voegt hem toe
-   var config = {
+    //voegt achtergrond toe
+    this.add.image(window.innerWidth / 2, 300, 'background').setScale(1.2);
+
+    //voegt ondergrond met physics toe
+    platforms = this.physics.add.staticGroup();
+    platforms.create(0, window.innerHeight - 50, 'ground').setScale(0.3).refreshBody();
+    platforms.create(700, window.innerHeight - 230, 'ground').setScale(0.3).refreshBody();
+    platforms.create(1400, window.innerHeight - 150, 'ground').setScale(0.3).refreshBody();
+
+    //maakt animatie stilstand voor aapje
+    this.anims.create({
     key:'breath',
     frames: this.anims.generateFrameNumbers('player', { start: 0, end: 1}),
-    frameRate: 2,
+    frameRate: 1,
     repeat: -1
-   };
-   // maaktt player aan met animatie
-    this.anims.create(config);
-    player = this.physics.add.sprite(200, 200, 'player');
-    player.anims.play('breath');
+    }); 
+    //maakt loop animatie voor aapje
+   this.anims.create({
+    key:'walk',
+    frames: this.anims.generateFrameNumbers('player', { start: 2, end: 5}),
+    frameRate: 10,
+    repeat: -1
+    });
+   //maakt animatie aan voor afro
+   this.anims.create({
+    key:'afro',
+    frames: this.anims.generateFrameNumbers('afro', { start:0, end: 14}),
+    frameRate: 10,
+    repeat : -1,
+    yoyo: true
+   });
+    //voegt afro en de player toe
+    afro = this.physics.add.sprite(1000, 200, 'afro');
+    player = this.physics.add.sprite(125, 200, 'player');
+    afro.anims.play('afro');
 
-
+    // camera volt player
     this.cameras.main.startFollow(player);
 
-    //  Player physics 
+    //  player en game physics 
     player.setCollideWorldBounds(true);
     this.physics.add.collider(player, platforms);
-   // this.world.setBounds(-1000, -1000, 2000, 2000);
-
+    this.physics.add.collider(afro, platforms);
+    this.physics.add.overlap(afro, player);
+    this.physics.world.setBounds(0, 0, 1260 * 4, 720 * 2);
+ 
+   
     // zet keyinput in var
     Akey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
     Wkey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
     Skey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
     Dkey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+    
 
 }  
 function update ()
-{
+{   
+ 
     //beweegt naar links als a gedrukt is
     if (Akey.isDown)
     {
+        player.anims.play('walk', true);
         player.setVelocityX(-160);
         player.flipX = true;
-
+        console.log(Akey);
     }
     //beweegt naar rechts als d is in gedrukt
     else if (Dkey.isDown)
     {
         player.setVelocityX(160);
         player.flipX = false;
+        player.anims.play('walk', true);
     }
     else
-    {
+    {   
+        //wat er gebruikt als de player niks indrukt
+        player.anims.play('breath', true);
         player.setVelocityX(0);
-
+        console.log(player.x + afro.x);
     }
     //springt als w is ingedrukt
     if (Wkey.isDown && player.body.touching.down)
     {
-        player.setVelocityY(-330);
-    }   
+        
+       player.setVelocityY(-450);
+    }  
+    // als het aapje aphrodite aanraakt 
+    if (player.x >= afro.x){
+     afroStill = this.add.sprite(1200, 340, 'idle').setScale(1.8);
+     afroStill.flipX = true;
+
+     aapStill = this.add.sprite(300, 340, 'player').setScale(4);
+
+
+
+
+
+    }
 } 
 
 </script>
