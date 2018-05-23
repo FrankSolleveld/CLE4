@@ -1,0 +1,1 @@
+let aod = new Game()
