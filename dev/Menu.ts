@@ -15,8 +15,11 @@ class Menu
         aod.playground.titleText = aod.playground.add.text(0, 0, "Ape of Divinity", {
             boundsAlignH:'center'
         });
-        aod.playground.titleText.setShadow(3, 3, 'rgba(0,0,0,0.5)', 5);
+
+        // aod.playground.titleText = aod.playground.add.bitmapText(aod.playground, 50, 50, 'arcadeclassic', 'Ape of Divinity', 50, 'center'); 
+        // aod.playground.titleText.setShadow(3, 3, 'rgba(0,0,0,0.5)', 5);
         // aod.playground.titleText.anchor.set(0.5);
+
         aod.playground.optionCount = 1;
     }
 
