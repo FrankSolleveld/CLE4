@@ -6,6 +6,7 @@ class Player {
     constructor() 
     {
             //maakt loop animatie voor aapje
+            console.log('hoi')
         this.create()
         this.animations()
         this.movement()
@@ -36,12 +37,14 @@ class Player {
 
     movement()
     {
+
         let Akey = aod.playground.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         let Wkey = aod.playground.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         //let Skey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         let Dkey = aod.playground.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         if (Akey.isDown)
         {
+            console.log("blah")
             this.player.anims.play('walk', true);
             this.player.setVelocityX(-160);
             this.player.flipX = true;
