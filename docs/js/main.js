@@ -27,36 +27,30 @@ var Game = (function () {
         this.load.image('ground', 'images/ground.png');
         this.load.image('idle', 'images/idle.png');
         this.load.image('banaan', 'images/banaan.png');
-        this.load.image('retro-game-bg', 'images/retro-game-bg.jpg');
         this.load.spritesheet('player', 'images/player.png', { frameWidth: 125, frameHeight: 119 });
         this.load.spritesheet('afro', 'images/idleA.png', { frameWidth: 317, frameHeight: 391 });
     };
     Game.prototype.create = function () {
         aod.playground = this;
-        new Menu();
+        this.add.image(window.innerWidth / 2, 300, 'background').setScale(1.2);
+        var platforms = this.physics.add.staticGroup();
+        platforms.create(100, 700, 'ground').setScale(0.3).refreshBody();
+        platforms.create(700, 500, 'ground').setScale(0.3).refreshBody();
+        platforms.create(1200, 700, 'ground').setScale(0.3).refreshBody();
+        aod.player = new Player();
+        aod.aphrodite = new Aphrodite();
+        aod.banaan = new Banaan();
+        aod.playground.physics.add.collider(aod.player.player, platforms);
+        aod.playground.physics.add.collider(aod.aphrodite.aphrodite, platforms);
+        aod.playground.physics.add.overlap(aod.aphrodite, aod.player.player);
+        aod.playground.physics.world.setBounds(0, 0, 1260 * 4, 720 * 2);
     };
     Game.prototype.update = function () {
+        aod.player.movement();
     };
     return Game;
 }());
 var aod = new Game();
-var Menu = (function () {
-    function Menu() {
-        this.init();
-        this.create();
-    }
-    Menu.prototype.init = function () {
-        aod.playground.add.image(window.innerWidth / 2, window.innerHeight, 'retro-game-bg').setScale(2);
-        aod.playground.titleText = aod.playground.add.text(0, 0, "Ape of Divinity", {
-            boundsAlignH: 'center'
-        });
-        aod.playground.titleText.setShadow(3, 3, 'rgba(0,0,0,0.5)', 5);
-        aod.playground.optionCount = 1;
-    };
-    Menu.prototype.create = function () {
-    };
-    return Menu;
-}());
 var PlayScreen = (function () {
     function PlayScreen(g) {
         this.game = g;
@@ -140,27 +134,15 @@ var Banaan = (function () {
         this.create();
     }
     Banaan.prototype.create = function () {
-        var banaan = this.physics.add.staticGroup();
-        banaan.create(100, 400, 'banaan').setScale(0.3);
-        banaan.create(50, 'banaan').setScale(0.3);
+        var banaan = aod.playground.physics.add.staticGroup();
+        banaan.create(250, 650, 'banaan').setScale(0.3);
+        banaan.create(450, 50, 'banaan').setScale(0.3);
         banaan.create(100, 100, 'banaan').setScale(0.3);
     };
     return Banaan;
 }());
 var Level1 = (function () {
     function Level1() {
-        aod.playground.add.image(window.innerWidth / 2, 300, 'background').setScale(1.2);
-        var platforms = aod.playground.physics.add.staticGroup();
-        platforms.create(0, 50, 'ground').setScale(0.3).refreshBody();
-        platforms.create(700, 230, 'ground').setScale(0.3).refreshBody();
-        platforms.create(1400, 150, 'ground').setScale(0.3).refreshBody();
-        aod.player = new Player();
-        aod.aphrodite = new Aphrodite();
-        aod.banaan = new Banaan();
-        aod.playground.physics.add.collider(aod.player.player, platforms);
-        aod.playground.physics.add.collider(aod.aphrodite.aphrodite, platforms);
-        aod.playground.physics.add.overlap(aod.aphrodite, aod.player.player);
-        aod.playground.physics.world.setBounds(0, 0, 1260 * 4, 720 * 2);
     }
     Level1.prototype.update = function () {
     };

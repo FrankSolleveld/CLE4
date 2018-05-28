@@ -1,6 +1,5 @@
 
 
-
 class Banaan {
     
     constructor(){
@@ -15,5 +14,4 @@ class Banaan {
         banaan.create(100, 100, 'banaan').setScale(0.3)
     }
 
-}
 }
