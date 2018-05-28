@@ -4,18 +4,15 @@ class Dialog
     text:string = "";
 
     currentText:string = "";
+    amountEnters:integer = 0;
 
     dialog:object;
     textObject:object;
 
-    dialogPhase = 1;
-
     // -----
     // HOW TO USE:
     //
-    // \n\n = 1 enter
-    //
-    // let dialog = new Dialog("Hallo daar! Dit is een demo tekst, erg lollig\n\nom dit te lezen! Als je nog vragen hebt, laat\n\nhet mij weten!", () => {
+    // let dialog = new Dialog("Hallo daar! Dit is een demo tekst, erg lollig om dit te lezen! Als je nog vragen hebt, laat het mij weten!", () => {
     //     alert("Klaar met praten!");
     //     dialog.hide();
     // });
@@ -60,12 +57,19 @@ class Dialog
                 setTimeout(this.callback, 2000);
                 return;
             }
+            
+            // // Do we need to add an enter?
+            // let amountOfCharacters = this.currentText.length - (this.amountEnters * 45);
+            // if(amountOfCharacters > 45) 
+            // {
+            //     this.currentText += "\n\n";
+            //     this.amountEnters++;
+            // }
 
-            this.currentText += this.text[this.currentText.length];
+            this.currentText += this.text[this.currentText.length - (this.amountEnters * 2)];
 
             this.textObject.setText(this.currentText);
-            
-        }, 25);
+        }, 75);
     }
 
     hide()
