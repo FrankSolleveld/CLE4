@@ -40,6 +40,7 @@ class Game {
         this.load.image('idle', 'images/idle.png')
         this.load.image('banaan', 'images/banaan.png')
         this.load.image('retro-game-bg', 'images/retro-game-bg.jpg')
+        this.load.image('dialog', 'images/dialog.png')
         this.load.spritesheet('player', 'images/player.png', {frameWidth: 125, frameHeight: 119})    
         this.load.spritesheet('afro', 'images/idleA.png', {frameWidth: 317, frameHeight: 391})
     }   
