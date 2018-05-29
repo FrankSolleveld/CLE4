@@ -41,11 +41,12 @@ class Game {
         this.load.image('banaan', 'images/banaan.png')
         this.load.image('retro-game-bg', 'images/retro-game-bg.jpg')
         this.load.image('dialog', 'images/dialog.png')
+        this.load.image('tree', 'images/tree.png')
         this.load.spritesheet('player', 'images/player.png', {frameWidth: 125, frameHeight: 119})    
         this.load.spritesheet('afro', 'images/idleA.png', {frameWidth: 317, frameHeight: 391})
 
         this.load.bitmapFont('arcadeclassic', 'fonts/arcadeclassic/font.png', 'fonts/arcadeclassic/font.fnt');
-       // enterKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+       // enterKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER); 
     }   
 
     create()
