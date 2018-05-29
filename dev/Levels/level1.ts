@@ -1,6 +1,8 @@
 class Level1 {
 
-    welcomeDialog:Dialog;
+    startDialog:Dialog;
+    aphrodite:Aphrodite;
+    talkingToAphrodite:boolean = false;
 
     constructor() {
 
@@ -24,16 +26,17 @@ class Level1 {
         
 
         aod.player = new Player();
-        aod.aphrodite = new Aphrodite();
+        this.aphrodite = new Aphrodite();
         aod.banaan = new Banaan();
         
 
         aod.playground.physics.add.collider(aod.player.player, aod.platforms);
-        aod.playground.physics.add.collider(aod.aphrodite.aphrodite, aod.platforms);
-        aod.playground.physics.add.overlap(aod.aphrodite, aod.player.player, this.hey, null, this);
+        aod.playground.physics.add.collider(this.aphrodite.aphrodite, aod.platforms);
+
+        aod.playground.physics.add.overlap(this.aphrodite.aphrodite, aod.player.player, this.hey, null, this);
         aod.playground.physics.world.setBounds(0, 0, 1260 * 4, 720 * 2);
 
-        this.welcomeDialog = new Dialog("Zie je daar Aphrodite? Loop naar haar toe en\n\nzeg haar gedag!");
+        this.startDialog = new Dialog("Zie je daar Aphrodite? Loop naar haar toe en\n\nzeg haar gedag!");
     }
 
     update() {
@@ -41,6 +44,39 @@ class Level1 {
     }
 
     hey() {
-        this.welcomeDialog.hide();
+        // Already talking to Aphrodite?
+        // YES: Do not trigger it again
+        if(this.talkingToAphrodite) { return; }
+
+        // Update the object, saying we're talking to Aphrodite
+        this.talkingToAphrodite = true;
+        
+        // Hide start dialog
+        this.startDialog.hide();
+
+        // Prevent user from walking
+        aod.player.disableWalking();
+
+        // Show talking dialog
+        let aphrodite_dialog_1 = new Dialog("Aphrodite:\n\nHoi ..., wat zie jij er leuk uit!", () => {
+            aphrodite_dialog_1.hide();
+
+            let ape_dialog_1 = new Dialog("Aapje:\n\nJa hoi! Dit is een stukje storyline!", () => {
+                ape_dialog_1.hide();
+
+                let aphrodite_dialog_2 = new Dialog("Aphrodite:\n\nJa dat klopt, leuke invulling!", () => {
+                    aphrodite_dialog_2.hide();
+
+                    let ape_dialog_2 = new Dialog("Aapje:\n\nOke ik zal de bananen sparen!", () => {
+                        ape_dialog_2.hide();
+                        
+                        // Let the player walk again
+                        aod.player.enableWalking();
+                    });
+                });
+            });
+        });
+        
+
     }
 }

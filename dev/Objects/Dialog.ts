@@ -30,7 +30,7 @@ class Dialog
         // Set dialog scale
         this.dialog.setScale(0.6);
 
-        this.textObject = aod.playground.add.text(this.dialog.x - (this.dialog.width * 0.6 / 2) + 30, this.dialog.y - (this.dialog.height * 0.6 / 2) + 30, "Tekst blabla", {
+        this.textObject = aod.playground.add.text(this.dialog.x - (this.dialog.width * 0.6 / 2) + 30, this.dialog.y - (this.dialog.height * 0.6 / 2) + 30, "", {
             color: "#000000",
             fontSize: 20,
             align: 'left',

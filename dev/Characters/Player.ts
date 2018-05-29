@@ -2,11 +2,11 @@
 
 class Player {
     player:object;
+    canWalk:boolean = true;
 
     constructor() 
     {
-            //maakt loop animatie voor aapje
-            console.log('hoi')
+        //maakt loop animatie voor aapje
         this.create()
         this.animations()
         this.movement()
@@ -35,8 +35,24 @@ class Player {
         })
     }
 
+    disableWalking()
+    {
+        this.canWalk = false;
+    }
+
+    enableWalking()
+    {
+        this.canWalk = true;
+    }
+
     movement()
     {
+        // If walking is disabled, do not walk
+        if(!this.canWalk) {
+            this.player.anims.play('breath', true);
+            this.player.setVelocityX(0);
+            return;
+        }
 
         let Akey = aod.playground.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         let Wkey = aod.playground.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);

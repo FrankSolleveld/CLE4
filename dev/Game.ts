@@ -3,7 +3,6 @@ class Game {
     game:Phaser.Game;
     player:Player;
     playground:object;
-    aphrodite:Aphrodite;
     banaan:Banaan;
     scene:any;
 
