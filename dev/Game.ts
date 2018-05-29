@@ -45,7 +45,7 @@ class Game {
         this.load.spritesheet('afro', 'images/idleA.png', {frameWidth: 317, frameHeight: 391})
 
         this.load.bitmapFont('arcadeclassic', 'fonts/arcadeclassic/font.png', 'fonts/arcadeclassic/font.fnt');
-        enterKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+       // enterKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
     }   
 
     create()
