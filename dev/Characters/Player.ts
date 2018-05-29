@@ -44,7 +44,6 @@ class Player {
         let Dkey = aod.playground.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         if (Akey.isDown)
         {
-            console.log("blah")
             this.player.anims.play('walk', true);
             this.player.setVelocityX(-160);
             this.player.flipX = true;
