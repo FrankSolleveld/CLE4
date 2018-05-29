@@ -20,10 +20,12 @@ class Level1 {
 
         // Add platforms
         aod.platforms = aod.playground.physics.add.staticGroup();
-        aod.platforms.create(50, 700, 'ground').setScale(0.3).refreshBody();
+        aod.platforms.create(150, 700, 'ground').setScale(0.3).refreshBody();
         aod.platforms.create(700, 500, 'ground').setScale(0.3).refreshBody();
         aod.platforms.create(1200, 300, 'ground').setScale(0.3).refreshBody();
         
+
+        new Waterfall(440, 650, 0.5);
 
         aod.player = new Player();
         this.aphrodite = new Aphrodite();

@@ -42,8 +42,9 @@ class Game {
         this.load.image('dialog', 'images/dialog.png')
         this.load.image('tree', 'images/tree.png')
         this.load.image('cloud', 'images/cloud.png')
-        this.load.spritesheet('player', 'images/player.png', {frameWidth: 125, frameHeight: 119})    
+        this.load.spritesheet('player', 'images/player.png', {frameWidth: 125, frameHeight: 119})
         this.load.spritesheet('afro', 'images/idleA.png', {frameWidth: 317, frameHeight: 391})
+        this.load.spritesheet('waterfall', 'images/waterfall.png', {frameWidth: 350, frameHeight: 538})
 
         this.load.bitmapFont('arcadeclassic', 'fonts/arcadeclassic/font.png', 'fonts/arcadeclassic/font.fnt');
        // enterKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER); 
