@@ -42,6 +42,7 @@ class Game {
         this.load.image('retro-game-bg', 'images/retro-game-bg.jpg')
         this.load.image('dialog', 'images/dialog.png')
         this.load.image('tree', 'images/tree.png')
+        this.load.image('cloud', 'images/cloud.png')
         this.load.spritesheet('player', 'images/player.png', {frameWidth: 125, frameHeight: 119})    
         this.load.spritesheet('afro', 'images/idleA.png', {frameWidth: 317, frameHeight: 391})
 
