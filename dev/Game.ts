@@ -55,7 +55,7 @@ class Game {
         aod.playground = this;
 
         //new Menu()
-        this.scene = new Level1()
+        this.scene = new Menu()
      
     }
 
