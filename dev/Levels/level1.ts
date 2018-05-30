@@ -8,7 +8,7 @@ class Level1 {
     constructor() {
         
         // Add background
-        aod.playground.add.image(window.innerWidth / 2, 300, 'background').setScale(1.2);
+        aod.playground.add.image(300, 300, 'background').setScale(0.3);
         
         // Randomize clouds
         new Clouds();

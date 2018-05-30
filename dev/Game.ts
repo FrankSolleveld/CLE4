@@ -34,7 +34,7 @@ class Game {
     
     preload()
     {
-        this.load.image('background', 'images/background1.jpg')
+        this.load.image('background', 'images/background_level1.png')
         this.load.image('ground', 'images/ground.png')
         this.load.image('idle', 'images/idle.png')
         this.load.image('banaan', 'images/banaan.png')
