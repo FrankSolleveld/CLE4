@@ -16,6 +16,7 @@ class Player {
     {
         this.player = aod.playground.physics.add.sprite(125, 200, 'player');
         this.player.setCollideWorldBounds(true);
+        
     }
 
     animations()

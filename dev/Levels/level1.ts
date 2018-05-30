@@ -3,9 +3,11 @@ class Level1 {
     startDialog:Dialog;
     aphrodite:Aphrodite;
     talkingToAphrodite:boolean = false;
+    part:number = 0;
 
     constructor() {
-
+ 
+        
         // Add background
         aod.playground.add.image(window.innerWidth / 2, 300, 'background').setScale(1.2);
         
@@ -28,21 +30,37 @@ class Level1 {
         new Waterfall(440, 650, 0.5);
 
         aod.player = new Player();
-        this.aphrodite = new Aphrodite();
-        aod.banaan = new Banaan();
-        
+        aod.aphrodite = new Aphrodite();
+
+
+        console.log(aod.player.player.x)
 
         aod.playground.physics.add.collider(aod.player.player, aod.platforms);
-        aod.playground.physics.add.collider(this.aphrodite.aphrodite, aod.platforms);
+        aod.playground.physics.add.collider(aod.aphrodite.aphrodite, aod.platforms);
 
-        aod.playground.physics.add.overlap(this.aphrodite.aphrodite, aod.player.player, this.hey, null, this);
+        aod.playground.physics.add.overlap(aod.aphrodite.aphrodite, aod.player.player, this.hey, null, this);
         aod.playground.physics.world.setBounds(0, 0, 1260 * 4, 720 * 2);
 
         this.startDialog = new Dialog("Zie je daar Aphrodite? Loop naar haar toe en\n\nzeg haar gedag!");
+       
+        
+       //aod.playground.cameras.main.startFollow(this.aod.player);
+        //aod.playground.cameras.main.setBounds(0, 0, 1920, 1080);
     }
 
     update() {
         aod.player.movement()
+        if (aod.player.player.x >= 1280){
+            aod.player.player.x = 125;
+            aod.player.player.y = 200;
+            this.level1Part2()
+
+        console.log('einde level')
+    }
+        if (aod.player.player.y >= 800){
+            aod.player.player.x = 125;
+            aod.player.player.y = 200;   
+        }
     }
 
     hey() {
@@ -57,7 +75,7 @@ class Level1 {
         this.startDialog.hide();
 
         // Prevent user from walking
-        aod.player.disableWalking();
+        //aod.player.disableWalking();
 
         // Show talking dialog
         let aphrodite_dialog_1 = new Dialog("Aphrodite:\n\nHoi ..., wat zie jij er leuk uit!", () => {
@@ -74,11 +92,19 @@ class Level1 {
                         
                         // Let the player walk again
                         aod.player.enableWalking();
+                        
                     });
                 });
             });
         });
         
+
+    }
+    level1Part2(){
+    aod.score = new Score();
+    this.part = 2
+    aod.aphrodite.delete()
+    aod.banaan = new Banaan();
 
     }
 }
