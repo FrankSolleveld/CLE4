@@ -5,7 +5,7 @@ class Menu {
 
     constructor() {
 
-        this.init()
+        this.init();
 
     }
 
