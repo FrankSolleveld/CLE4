@@ -55,13 +55,13 @@ class Game {
         aod.playground = this;
 
         //new Menu()
-        this.scene = new Menu()
+        aod.scene = new Menu()
      
     }
 
     update()
     {
-        this.scene.update()
+        aod.scene.update()
     
     }
 }

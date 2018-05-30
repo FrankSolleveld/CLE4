@@ -40,10 +40,14 @@ class Level1 {
         aod.playground.physics.world.setBounds(0, 0, 1260 * 4, 720 * 2);
 
         this.startDialog = new Dialog("Zie je daar Aphrodite? Loop naar haar toe en\n\nzeg haar gedag!");
+
+        //aod.playground.cameras.main.startFollow(this.aod.player);
+        //aod.playground.cameras.main.setBounds(0, 0, 1920, 1080);
         
     }
 
     update() {
+        console.log('update')
         aod.player.movement()
         console.log(aod.player.player.y)    
         if (aod.player.player.x >= 1280){
@@ -97,8 +101,9 @@ class Level1 {
 
     }
     level1Part2(){
-    this.part = 2
-    aod.aphrodite.delete()
-    aod.banaan = new Banaan();
+        aod.score = new Score();
+        this.part = 2
+        aod.aphrodite.delete()
+        aod.banaan = new Banaan();
     }
 }

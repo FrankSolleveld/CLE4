@@ -3,6 +3,7 @@
 class Banaan {
     banaan:object;
     banaans:object;
+    scoreBanaan:number = 0;
     constructor(){
         this.create()
 
@@ -21,11 +22,16 @@ class Banaan {
     //banaan.create(400, 50, 'banaan').setScale(0.3)
    // banaan.create(100, 100, 'banaan').setScale(0.3)
     aod.playground.physics.add.collider(banaans, aod.platforms);
-    aod.playground.physics.add.overlap(banaans, aod.player.player, this.collectBanaan, null, true);
+    aod.playground.physics.add.overlap(banaans, aod.player.player, (player, banaan) => {
+        this.collectBanaan(player, banaan);
+    }, null, true);
 }
 collectBanaan(player, banaan){
     banaan.disableBody(true, true)
-    console.log("nee")
-}     
+    this.scoreBanaan += 1;
+    console.log(this.scoreBanaan);
+    aod.score.update(this.scoreBanaan);
+
+    }     
 
 }
