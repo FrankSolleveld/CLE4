@@ -40,9 +40,12 @@ class Level1 {
         aod.playground.physics.world.setBounds(0, 0, 1260 * 4, 720 * 2);
 
         this.startDialog = new Dialog("Zie je daar Aphrodite? Loop naar haar toe en\n\nzeg haar gedag!");
+        
+        aod.playground.cameras.main.setBounds(0, 0, 1280 * 2, 720;
 
-        //aod.playground.cameras.main.startFollow(this.aod.player);
-        //aod.playground.cameras.main.setBounds(0, 0, 1920, 1080);
+        aod.playground.cameras.main.startFollow(aod.player.player, true, 0.05, 0.05);
+        //aod.playground.cameras.main.
+        //aod.playground.cameras.main.setBounds(0, 0, 3000, 1260);
         
     }
 
@@ -51,9 +54,9 @@ class Level1 {
         aod.player.movement()
         console.log(aod.player.player.y)    
         if (aod.player.player.x >= 1280){
-            aod.player.player.x = 125;
-            aod.player.player.y = 200;
-            this.level1Part2()
+            // aod.player.player.x = 125;
+            // aod.player.player.y = 200;
+            // this.level1Part2()
 
         console.log('einde level')
     }
@@ -75,7 +78,7 @@ class Level1 {
         this.startDialog.hide();
 
         // Prevent user from walking
-        aod.player.disableWalking();
+        //aod.player.disableWalking();
 
         // Show talking dialog
         let aphrodite_dialog_1 = new Dialog("Aphrodite:\n\nHoi ..., wat zie jij er leuk uit!", () => {
