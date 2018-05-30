@@ -4,8 +4,12 @@ class Aphrodite {
     aphrodite:object;
     constructor(){
         this.create();
+ 
+       // this.aphrodite.disableBody(true, true)
     }
-        
+    delete(){
+        this.aphrodite.destroy()
+    }
     create()
     {
         this.animations()
