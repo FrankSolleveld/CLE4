@@ -59,7 +59,8 @@ class Menu {
             if (Ekey.isDown) {
                 this.enableToStart = false;
                 // Zodra er op Enter is gedrukt, wordt je naar level 1 gebracht.
-                aod.scene = new Level1()
+                aod.scene = new Level1();
+                aod.soundEffects.fadeToLevel1();
             }
         }
     }

@@ -5,11 +5,18 @@ class Game {
     playground:object;
     banaan:Banaan;
     scene:any;
+    
+    soundEffects:SoundEffects;
 
 
     constructor() {
 
-        this.game = new Phaser.Game(this.config()) 
+        this.game = new Phaser.Game(this.config());
+
+        // new SoundEffects();
+
+        // this.menuBackgroundMusic = this.backgroundMusic();
+        // this.fantasyBackgroundMusic = this.fantasyMusic();
     }
 
     config()
@@ -30,7 +37,27 @@ class Game {
                 update: this.update
             }
         }
-    }     
+    }
+
+    backgroundMusic()
+    {
+        return new Howl({
+            src: ['./audio/menu.mp3'],
+            autoplay: true,
+            loop: true,
+            volume: 1
+        });
+    }
+
+    fantasyMusic()
+    {
+        return new Howl({
+            src: ['./audio/fantasy.mp3'],
+            autoplay: false,
+            loop: true,
+            volume: 1
+        });
+    }
     
     preload()
     {
@@ -56,7 +83,7 @@ class Game {
 
         //new Menu()
         aod.scene = new Menu()
-     
+        
     }
 
     update()
