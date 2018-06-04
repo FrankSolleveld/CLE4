@@ -60,7 +60,7 @@ class Menu {
                 this.enableToStart = false;
                 // Zodra er op Enter is gedrukt, wordt je naar level 1 gebracht.
                 aod.scene = new Level1();
-                aod.soundEffects.fadeToLevel1();
+                // aod.soundEffects.fadeToLevel1();
             }
         }
     }
