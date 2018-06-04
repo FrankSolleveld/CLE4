@@ -15,7 +15,7 @@ class Banaan {
        let banaans = aod.playground.physics.add.group({
         key: 'banaan',
         repeat: 7,
-        setXY: {x: 150, y:0, stepX: 100}
+        setXY: {x: 1050, y:0, stepX: 100}
 
     });
 

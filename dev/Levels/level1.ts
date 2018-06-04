@@ -8,7 +8,7 @@ class Level1 {
     constructor() {
         
         // Add background
-        aod.playground.add.image(300, 300, 'background').setScale(0.3);
+        aod.playground.add.image(1200, 300, 'background').setScale(0.3);
         
         // Randomize clouds
         new Clouds();
@@ -24,7 +24,8 @@ class Level1 {
         aod.platforms.create(150, 700, 'ground').setScale(0.3).refreshBody();
         aod.platforms.create(700, 500, 'ground').setScale(0.3).refreshBody();
         aod.platforms.create(1200, 300, 'ground').setScale(0.3).refreshBody();
-        
+        aod.platforms.create(1900, 600, 'ground').setScale(0.3).refreshBody();
+        aod.platforms.create(2400, 400, 'ground').setScale(0.3).refreshBody();
 
         new Waterfall(440, 650, 0.5);
 
@@ -56,7 +57,7 @@ class Level1 {
         if (aod.player.player.x >= 1280){
             // aod.player.player.x = 125;
             // aod.player.player.y = 200;
-            // this.level1Part2()
+            this.level1Part2()
 
         console.log('einde level')
     }
@@ -105,8 +106,8 @@ class Level1 {
     }
     level1Part2(){
         aod.score = new Score();
-        this.part = 2
-        aod.aphrodite.delete()
+        // this.part = 2
+        // aod.aphrodite.delete()
         aod.banaan = new Banaan();
     }
 }
