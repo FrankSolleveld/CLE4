@@ -32,8 +32,6 @@ class Level1 {
         aod.player = new Player();
         aod.aphrodite = new Aphrodite();
 
-        console.log(aod.player.player.x)
-
         aod.playground.physics.add.collider(aod.player.player, aod.platforms);
         aod.playground.physics.add.collider(aod.aphrodite.aphrodite, aod.platforms);
 
@@ -42,7 +40,7 @@ class Level1 {
 
         this.startDialog = new Dialog("Zie je daar Aphrodite? Loop naar haar toe en\n\nzeg haar gedag!");
         
-        aod.playground.cameras.main.setBounds(0, 0, 1280 * 2, 720;
+        aod.playground.cameras.main.setBounds(0, 0, 1280 * 2, 720);
 
         aod.playground.cameras.main.startFollow(aod.player.player, true, 0.05, 0.05);
         //aod.playground.cameras.main.
@@ -51,15 +49,12 @@ class Level1 {
     }
 
     update() {
-        console.log('update')
-        aod.player.movement()
-        console.log(aod.player.player.y)    
-        if (aod.player.player.x >= 1280){
+        aod.player.movement()  
+        if (aod.player.player.x >= 1280 && this.part == 0){
             // aod.player.player.x = 125;
             // aod.player.player.y = 200;
             this.level1Part2()
 
-        console.log('einde level')
     }
         if (aod.player.player.y >= 800){
             aod.player.player.x = 125;
@@ -99,15 +94,15 @@ class Level1 {
                         
                     });
                 });
-            });
+            });    
         });
         
 
     }
     level1Part2(){
         aod.score = new Score();
-        // this.part = 2
-        // aod.aphrodite.delete()
+        this.part = 2;
+        aod.aphrodite.delete();
         aod.banaan = new Banaan();
     }
 }
