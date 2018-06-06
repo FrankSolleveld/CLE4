@@ -35,8 +35,14 @@ class Game {
     
     preload()
     {
-        this.load.image('background', 'images/background_level1.png')
-        this.load.image('ground', 'images/ground.png')
+        this.load.image('background', 'images/background_level1.jpg')
+        this.load.image('ground-1', 'images/ground/ground-1.png')
+        this.load.image('ground-1.1', 'images/ground/ground-1.1.png')
+        this.load.image('ground-1.2', 'images/ground/ground-1.2.png')
+        this.load.image('ground-2', 'images/ground/ground-2.png')
+        this.load.image('ground-3', 'images/ground/ground-3.png')
+        this.load.image('ground-4', 'images/ground/ground-4.png')
+
         this.load.image('idle', 'images/idle.png')
         this.load.image('banaan', 'images/banaan.png')
         this.load.image('retro-game-bg', 'images/retro-game-bg.jpg')

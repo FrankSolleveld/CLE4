@@ -81,7 +81,7 @@ class Player {
         //springt als w is ingedrukt
         if (Wkey.isDown && this.player.body.touching.down)
         {
-           this.player.setVelocityY(-450);
+           this.player.setVelocityY(-550);
         }  
     }
     
