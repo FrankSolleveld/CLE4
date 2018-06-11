@@ -27,6 +27,20 @@ class Level1 {
         aod.playground.add.image(1235, 1650, 'ground-2').setScale(0.2);
         aod.platforms.create(1130, 1330, 'ground-3').setScale(0.2).refreshBody();
         aod.platforms.create(1805, 1600, 'ground-4').setScale(0.2).refreshBody();
+        aod.platforms.create(2380, 1650, 'ground-5').setScale(0.2).refreshBody();
+        aod.platforms.create(2850, 1600, 'ground-6').setScale(0.2).refreshBody();
+        aod.platforms.create(3250, 1550, 'ground-6.2').setScale(0.2).refreshBody();
+        aod.platforms.create(3465, 1650, 'ground-7').setScale(0.2).refreshBody();
+        aod.platforms.create(3730, 1600, 'ground-9').setScale(0.2).refreshBody();
+        aod.platforms.create(4200, 1350, 'ground-10').setScale(0.2).refreshBody();
+        aod.platforms.create(3800, 1350, 'ground-8').setScale(0.15).refreshBody();
+        aod.platforms.create(3550, 1080, 'ground-8').setScale(0.15).refreshBody();
+        aod.platforms.create(3900, 900, 'ground-8').setScale(0.15).refreshBody();
+        aod.platforms.create(4400, 1350, 'ground-10.2').setScale(0.2).refreshBody();
+        aod.platforms.create(4600, 1350, 'ground-11').setScale(0.15).refreshBody();
+        aod.platforms.create(4950, 1080, 'ground-12').setScale(0.15).refreshBody();
+        aod.platforms.create(5500, 900, 'ground-13').setScale(0.15).refreshBody();
+        aod.platforms.create(5600, 900, 'ground-14').setScale(0.15).refreshBody();
 
         // aod.platforms.create(1200, 300, 'ground').setScale(0.3).refreshBody();
         // aod.platforms.create(1900, 600, 'ground').setScale(0.3).refreshBody();
