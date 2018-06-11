@@ -26,6 +26,7 @@ class Dialog
 
         // Create new dialog
         this.dialog = aod.playground.add.image(aod.game.config.width / 2, aod.game.config.height - 100, 'dialog');
+        this.dialog.setScrollFactor(0);
 
         // Set dialog scale
         this.dialog.setScale(0.6);
@@ -37,6 +38,8 @@ class Dialog
         });
 
         this.textObject.width = 150;
+        this.textObject.setScrollFactor(0);
+
 
 
         // bmpText.maxWidth = 400;
