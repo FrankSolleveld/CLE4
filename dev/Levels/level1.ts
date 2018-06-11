@@ -36,11 +36,12 @@ class Level1 {
         aod.platforms.create(3800, 1350, 'ground-8').setScale(0.15).refreshBody();
         aod.platforms.create(3550, 1080, 'ground-8').setScale(0.15).refreshBody();
         aod.platforms.create(3900, 900, 'ground-8').setScale(0.15).refreshBody();
-        aod.platforms.create(4400, 1350, 'ground-10.2').setScale(0.2).refreshBody();
-        aod.platforms.create(4600, 1350, 'ground-11').setScale(0.15).refreshBody();
-        aod.platforms.create(4950, 1080, 'ground-12').setScale(0.15).refreshBody();
-        aod.platforms.create(5500, 900, 'ground-13').setScale(0.15).refreshBody();
-        aod.platforms.create(5600, 900, 'ground-14').setScale(0.15).refreshBody();
+        aod.platforms.create(4470, 1400, 'ground-10.2').setScale(0.2).refreshBody();
+        aod.platforms.create(4745, 1660, 'ground-11').setScale(0.15).refreshBody();
+        aod.platforms.create(5248, 1625, 'ground-12').setScale(0.15).refreshBody();
+        aod.platforms.create(4825, 1350, 'ground-8').setScale(0.15).refreshBody();        
+        aod.platforms.create(5662, 1660, 'ground-13').setScale(0.15).refreshBody();
+        aod.platforms.create(5975, 1625, 'ground-14').setScale(0.15).refreshBody();
 
         // aod.platforms.create(1200, 300, 'ground').setScale(0.3).refreshBody();
         // aod.platforms.create(1900, 600, 'ground').setScale(0.3).refreshBody();
