@@ -56,7 +56,7 @@ class Endscene {
 
     hey() {
         // Prevent user from walking
-        //aod.player.disableWalking();
+        aod.player.disableWalking();
 
         // Show talking dialog
         let ape_dialog_1 = new Dialog("Aapje:\n\n En wie ben jij?", () => {
@@ -68,7 +68,7 @@ class Endscene {
                 let ape_dialog_2 = new Dialog("Aapje:\n\nBeloning is altijd goed.", () => {
                     ape_dialog_2.hide();
 
-                    let zeus_dialog_2 = new Dialog("Zeus:\n\nJe hebt alle proeven doorstraan.\nDat heb je goed gedaan.", () => {
+                    let zeus_dialog_2 = new Dialog("Zeus:\n\nJe hebt alle proeven doorstaan.\nDat heb je goed gedaan.", () => {
                         zeus_dialog_2.hide();
 
                         let ape_dialog_3 = new Dialog("Aapje:\n\nBedankt joe.", () => {
