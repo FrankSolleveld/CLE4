@@ -29,4 +29,8 @@ class Aphrodite {
            });
     }
 
+    move(){
+        // Als dialoog loopt is Aprodite bij het begin, na dialoog is ze aan het einde van het level.
+    }
+
     }

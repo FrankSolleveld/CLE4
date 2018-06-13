@@ -56,6 +56,7 @@ class Level1 {
         aod.playground.physics.add.collider(aod.player.player, aod.platforms);
         aod.playground.physics.add.collider(aod.aphrodite.aphrodite, aod.platforms);
 
+        // Dialogue starts when player hits Aphrodite.
         aod.playground.physics.add.overlap(aod.aphrodite.aphrodite, aod.player.player, this.hey, null, this);
         aod.playground.physics.world.setBounds(0, 0, 6271, 1664);
 
