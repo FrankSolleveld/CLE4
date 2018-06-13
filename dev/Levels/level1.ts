@@ -15,13 +15,11 @@ class Level1 {
         new Clouds();
 
         // // Add trees to the game (behind the platforms!)
-        // new Tree(50, 495);
-        // new Tree(300, 495);
-        // new Tree(800, 300);
-        // new Tree(1200, 100);
-        //tree
         aod.playground.add.image(440, 1225, 'tree1').setScale(0.2)
-
+        aod.playground.add.image(1850, 1235, 'tree2').setScale(0.2)
+        aod.playground.add.image(5260, 1225, 'tree2').setScale(0.2)
+        aod.playground.add.image(6000, 1270, 'tree3').setScale(0.2)
+        aod.playground.add.image(2800, 1320, 'statue')
 
 
         // Add platforms
@@ -50,7 +48,8 @@ class Level1 {
 
         //add objects
 
-        new Waterfall(440, 650, 0.5);
+        new Waterfall(2800, 1730, 0.8);
+        new Waterfall(4200, 1070, 0.5);
 
         aod.player = new Player();
         aod.aphrodite = new Aphrodite();
@@ -59,11 +58,11 @@ class Level1 {
         aod.playground.physics.add.collider(aod.aphrodite.aphrodite, aod.platforms);
 
         aod.playground.physics.add.overlap(aod.aphrodite.aphrodite, aod.player.player, this.hey, null, this);
-        aod.playground.physics.world.setBounds(0, 0, 11271, 1664);
+        aod.playground.physics.world.setBounds(0, 0, 6271, 1664);
 
         this.startDialog = new Dialog("Een mystiek wezen staat\nin de verte op je te wachten.");
 
-        aod.playground.cameras.main.setBounds(0, 0, 11271, 1664);
+        aod.playground.cameras.main.setBounds(0, 0, 6100, 1664);
 
         aod.playground.cameras.main.startFollow(aod.player.player, true, 0.05, 0.05);
         //aod.playground.cameras.main.
