@@ -3,7 +3,6 @@ class Level1 {
     startDialog: Dialog;
     aphrodite: Aphrodite;
     talkingToAphrodite: boolean = false;
-    part: number = 0;
 
     constructor() {
 
@@ -73,12 +72,6 @@ class Level1 {
     update() {
         aod.player.movement()
         console.log(aod.player.player.y)
-        if (aod.player.player.x >= 1280 && this.part == 0) {
-            // aod.player.player.x = 125;
-            // aod.player.player.y = 200;
-            this.level1Part2()
- 
-        }
         // if (aod.player.player.y >= 800) {
         //     aod.player.player.x = 125;
         //     aod.player.player.y = 200;
@@ -125,11 +118,5 @@ class Level1 {
         });
 
 
-    }
-    level1Part2() {
-        aod.score = new Score();
-        this.part = 2;
-        aod.aphrodite.delete();
-        aod.banaan = new Banaan();
     }
 }       
