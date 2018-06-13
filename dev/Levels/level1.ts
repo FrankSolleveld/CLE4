@@ -9,15 +9,20 @@ class Level1 {
 
         // Add background
         aod.playground.add.image(2444, 832, 'background');
+        aod.playground.add.image(7044, 832, 'background');
 
         // Randomize clouds
         new Clouds();
 
-        // Add trees to the game (behind the platforms!)
-        new Tree(50, 495);
-        new Tree(300, 495);
-        new Tree(800, 300);
-        new Tree(1200, 100);
+        // // Add trees to the game (behind the platforms!)
+        // new Tree(50, 495);
+        // new Tree(300, 495);
+        // new Tree(800, 300);
+        // new Tree(1200, 100);
+        //tree
+        aod.playground.add.image(440, 1225, 'tree1').setScale(0.2)
+
+
 
         // Add platforms
         aod.platforms = aod.playground.physics.add.staticGroup();
@@ -43,9 +48,7 @@ class Level1 {
         aod.platforms.create(5662, 1660, 'ground-13').setScale(0.15).refreshBody();
         aod.platforms.create(5975, 1625, 'ground-14').setScale(0.15).refreshBody();
 
-        // aod.platforms.create(1200, 300, 'ground').setScale(0.3).refreshBody();
-        // aod.platforms.create(1900, 600, 'ground').setScale(0.3).refreshBody();
-        // aod.platforms.create(2400, 400, 'ground').setScale(0.3).refreshBody();
+        //add objects
 
         new Waterfall(440, 650, 0.5);
 

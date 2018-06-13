@@ -55,6 +55,13 @@ class Game {
         this.load.image('ground-13', 'images/ground/ground-13.png')
         this.load.image('ground-14', 'images/ground/ground-14.png')
 
+
+        //load background things
+        this.load.image('tree1', 'images/background-objects/trees-1.png')
+        this.load.image('tree2', 'images/background-objects/trees-2-3.png')
+        this.load.image('tree3', 'images/background-objects/trees-4.png')
+        this.load.image('statue', 'images/background-objects/statue-3.png')
+
         this.load.image('idle', 'images/idle.png')
         this.load.image('banaan', 'images/banaan.png')
         this.load.image('retro-game-bg', 'images/retro-game-bg.jpg')
