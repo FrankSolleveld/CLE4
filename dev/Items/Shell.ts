@@ -14,9 +14,9 @@ class Shell
         this.y = y;
 
         // Shell object
-        // this.shellObject = aod.playground.add.sprite(x, y, 'shell_animated');
-        this.shellObject = aod.playground.physics.add.image(x, y, 'shell');
-        // this.shellObject.anims.play('shell_animated');
+        // this.shellObject = aod.playground.add.sprite(x, y, 'shell');
+        this.shellObject = aod.playground.physics.add.sprite(x, y, 'shell');
+        this.shellObject.anims.play('shell_animated');
         this.shellObject.setScale(0.2);
         this.shellObject.body.allowGravity = false;
         this.shellObject.body.immovable = true;
@@ -31,13 +31,13 @@ class Shell
 
     animation()
     {
-        // aod.game.anims.create({
-        //     key:'shell_animated',
-        //     frames: aod.game.anims.generateFrameNumbers('shell_animated', { start:0, end: 3}),
-        //     frameRate: 10,
-        //     repeat : -1,
-        //     yoyo : true
-        // });
+        aod.game.anims.create({
+            key:'shell_animated',
+            frames: aod.game.anims.generateFrameNumbers('shell', { start:0, end: 3}),
+            frameRate: 10,
+            repeat : -1,
+            yoyo : true
+        });
     }
 
     updateShell()
