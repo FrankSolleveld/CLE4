@@ -1,5 +1,7 @@
 class Endscene {
 
+    zeus: Zeus;
+    
     constructor() {
 
         // Add background
@@ -31,10 +33,10 @@ class Endscene {
         aod.player = new Player();
 
         // Wordt Zeus
-        aod.aphrodite = new Aphrodite();
+        aod.zeus = new Zeus();
 
         aod.playground.physics.add.collider(aod.player.player, aod.platforms);
-        aod.playground.physics.add.collider(aod.aphrodite.aphrodite, aod.platforms);
+        aod.playground.physics.add.collider(aod.zeus.zeus, aod.platforms);
 
         aod.playground.physics.world.setBounds(0, 0, 6271, 1664);
 
