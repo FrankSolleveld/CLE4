@@ -1,7 +1,7 @@
 class Endscene {
 
     zeus: Zeus;
-    
+
     constructor() {
 
         // Add background
@@ -59,19 +59,19 @@ class Endscene {
         //aod.player.disableWalking();
 
         // Show talking dialog
-        let ape_dialog_1 = new Dialog("Aapje:\n\nWAUW, wie ben jij?", () => {
+        let ape_dialog_1 = new Dialog("Aapje:\n\n En wie ben jij?", () => {
             ape_dialog_1.hide();
 
-            let aphrodite_dialog_1 = new Dialog("Aphrodite:\n\nIk ben Aphrodite, Griekse godin van de\nverleiding. Kijk uit of je zal mij ook niet\nkunnen weerstaan. ", () => {
-                aphrodite_dialog_1.hide();
+            let zeus_dialog_1 = new Dialog("Zeus:\n\nIk ben Zeus, Oppergod.\nIk ben hier om jou\nte belonen. ", () => {
+                zeus_dialog_1.hide();
 
-                let ape_dialog_2 = new Dialog("Aapje:\n\nDat zal moeilijk worden met al\ndie bananen om je heen.", () => {
+                let ape_dialog_2 = new Dialog("Aapje:\n\nBeloning is altijd goed.", () => {
                     ape_dialog_2.hide();
 
-                    let aphrodite_dialog_2 = new Dialog("Aphrodite:\n\nAls jij mij echt kan weerstaan zal je dat\nmoeten bewijzen door al de bananen te\nverzamelen.", () => {
-                        aphrodite_dialog_2.hide();
+                    let zeus_dialog_2 = new Dialog("Zeus:\n\nJe hebt alle proeven doorstraan.\nDat heb je goed gedaan.", () => {
+                        zeus_dialog_2.hide();
 
-                        let ape_dialog_3 = new Dialog("Aapje:\n\nKlinkt als een uitdaging.", () => {
+                        let ape_dialog_3 = new Dialog("Aapje:\n\nBedankt joe.", () => {
                             ape_dialog_3.hide();
 
                             // Let the player walk again
