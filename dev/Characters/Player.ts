@@ -59,14 +59,20 @@ class Player {
         let Wkey = aod.playground.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         //let Skey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         let Dkey = aod.playground.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
-        if (Akey.isDown)
+
+        let upKey = aod.playground.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
+        let leftKey = aod.playground.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
+        let rightKey = aod.playground.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+
+       
+        if (Akey.isDown || leftKey.isDown)
         {
             this.player.anims.play('walk', true);
             this.player.setVelocityX(-160);
             this.player.flipX = true;
         }
         //beweegt naar rechts als d is in gedrukt
-        else if (Dkey.isDown)
+        else if (Dkey.isDown || rightKey.isDown)
         {
             this.player.setVelocityX(160);
             this.player.flipX = false;
@@ -79,7 +85,7 @@ class Player {
             this.player.setVelocityX(0);
         }
         //springt als w is ingedrukt
-        if (Wkey.isDown && this.player.body.touching.down)
+        if ((Wkey.isDown && this.player.body.touching.down) || (upKey.isDown && this.player.body.touching.down))
         {
            this.player.setVelocityY(-550);
         }  
