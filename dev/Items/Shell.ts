@@ -21,9 +21,9 @@ class Shell
         this.shellObject.body.allowGravity = false;
         this.shellObject.body.immovable = true;
         
-        aod.playground.physics.add.collider(this.shellObject, aod.player.player, this.dead);
+        aod.playground.physics.add.collider(this.shellObject, aod.player.player,aod.player.dead;
 
-        aod.playground.physics.add.overlap(this.shellObject, aod.player.player, this.dead, null, aod.game);
+        aod.playground.physics.add.overlap(this.shellObject, aod.player.player, aod.player.dead, null, aod.game);
 
 
         this.updateShell();

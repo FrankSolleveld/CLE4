@@ -45,7 +45,10 @@ class Player {
     {
         this.canWalk = true;
     }
-
+    dead(){
+        aod.player.player.x = 125;
+        aod.player.player.y = 1200;
+    }
     movement()
     {
         // If walking is disabled, do not walk
@@ -90,6 +93,7 @@ class Player {
            this.player.setVelocityY(-550);
         }  
     }
-    
- 
+    delete(){
+        this.player.destroy()
+    }
 }
