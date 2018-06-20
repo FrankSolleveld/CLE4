@@ -80,12 +80,12 @@ class Game {
         // enterKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER); 
         
         // Artemis stuff
-        this.load.image('artemis', 'images/artimis/avatar.png')
-        this.load.image('artemis-bow', 'images/artimis/bow.png')
-        this.load.image('artemis-arrow', 'images/artimis/bow_arrow.png')
+        this.load.image('artemis-bow', 'images/artemis/bow.png')
+        this.load.image('artemis-arrow', 'images/artemis/arrow.png')
 
         // Loading in Zeus
         this.load.spritesheet('zeus', 'images/zeus.png', {frameWidth: 111 , frameHeight: 156})
+        this.load.spritesheet('artemis', 'images/artemis/avatar.png', {frameWidth: 66 , frameHeight: 123})
         
     }   
 
