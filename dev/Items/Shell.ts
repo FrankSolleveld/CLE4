@@ -17,7 +17,7 @@ class Shell
         // this.shellObject = aod.playground.add.sprite(x, y, 'shell');
         this.shellObject = aod.playground.physics.add.sprite(x, y, 'shell');
         this.shellObject.anims.play('shell_animated');
-        this.shellObject.setScale(0.2);
+        this.shellObject.setScale(0.3);
         this.shellObject.body.allowGravity = false;
         this.shellObject.body.immovable = true;
         

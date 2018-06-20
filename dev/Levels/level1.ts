@@ -78,8 +78,9 @@ class Level1 {
         new Banaan(4425, 1000);
         new Banaan(4820, 1000);
         new Banaan(5250, 1000);
-        new Banaan(58250, 1000);
+        new Banaan(5825, 1000);
         aod.score = new Score();
+        new Shell(2350, 1500)
     }
 
     update() {
