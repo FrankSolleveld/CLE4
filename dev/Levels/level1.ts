@@ -75,14 +75,16 @@ class Level1 {
         new Banaan(3250, 1200);
         new Banaan(3525, 1000);
         new Banaan(3900, 1500);
-        new Banaan(4100, 1000);
-        new Banaan(4500, 1000);
+        new Banaan(4425, 1000);
+        new Banaan(4820, 1000);
+        new Banaan(5250, 1000);
+        new Banaan(58250, 1000);
         aod.score = new Score();
     }
 
     update() {
         aod.player.movement()
-            //console.log(aod.player.player.y)
+            console.log(aod.player.player.x)
         // if (aod.player.player.y >= 800) {
         //     aod.player.player.x = 125;
         //     aod.player.player.y = 200;

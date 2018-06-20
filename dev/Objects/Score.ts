@@ -5,7 +5,7 @@ class Score
     tekst1:any
     huidigeBanaan:any = 0
     constructor(){ 
-        this.tekst1 = aod.playground.add.text(1050, 50, this.huidigeBanaan + "/8", {
+        this.tekst1 = aod.playground.add.text(1050, 50, this.huidigeBanaan + "/10", {
             color: "#000000",
             fontSize: 50});
         this.tekst1.setScrollFactor(0);
@@ -20,7 +20,7 @@ class Score
 
 
 update(aantalBanaan){  
-    this.tekst1.setText( aantalBanaan + "/8");
+    this.tekst1.setText( aantalBanaan + "/10");
 
 }
 
