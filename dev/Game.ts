@@ -84,6 +84,10 @@ class Game {
         this.load.image('artemis-bow', 'images/artemis/bow.png')
         this.load.image('artemis-arrow', 'images/artemis/arrow.png')
 
+        this.load.image('level2-bg', 'images/level2_bg2.png')
+        this.load.image('level2-platform', 'images/level2-ground.png')
+
+
         // Loading in Zeus
         this.load.spritesheet('zeus', 'images/zeus.png', {frameWidth: 111 , frameHeight: 156})
         this.load.spritesheet('artemis', 'images/artemis/avatar.png', {frameWidth: 66 , frameHeight: 123})

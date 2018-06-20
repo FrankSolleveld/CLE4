@@ -29,8 +29,10 @@ class Endscene {
         aod.platforms.create(2380, 1650, 'ground-5').setScale(0.2).refreshBody();
 
         //add objects
-
         aod.player = new Player();
+
+        aod.player.player.x = 100; 
+        aod.player.player.y = 400;
 
         // Wordt Zeus
         aod.zeus = new Zeus();
@@ -76,7 +78,8 @@ class Endscene {
 
                             // Let the player walk again
                             aod.player.enableWalking();
-
+                            
+                            document.location.reload();
                         });
                     });
                 });

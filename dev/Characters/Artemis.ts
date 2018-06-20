@@ -11,7 +11,7 @@ class Artemis
 
     constructor()
     {
-        this.artemisObject = aod.playground.physics.add.sprite(window.innerWidth - 250, window.innerHeight - 250, 'artemis');
+        this.artemisObject = aod.playground.physics.add.sprite(window.innerWidth - 250, 200, 'artemis');
         this.animation();
         this.artemisObject.anims.play('artemis', true);
 
