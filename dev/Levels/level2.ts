@@ -46,8 +46,8 @@ class Level2
 
             let aphrodite_dialog_1 = new Dialog("Artemis:\n\nHe! Ga weg! Dit is mijn bos! >:(", () => {
                 aphrodite_dialog_1.hide();
-
-                let ape_dialog_2 = new Dialog("Artemis lijkt boos, ontwijk zijn pijlen!", () => {
+                
+                let ape_dialog_2 = new Dialog("Ho, ho ho, die pijl en boog is nergens voor nodig. \n\Ik ben gewoon maar een aapje op zoek naar avontuur!", () => {
                     ape_dialog_2.hide();
                     aod.player.enableWalking();
                     aod.scene.artemis.canShoot = true;

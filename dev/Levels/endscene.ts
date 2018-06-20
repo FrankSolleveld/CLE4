@@ -73,8 +73,11 @@ class Endscene {
                     let zeus_dialog_2 = new Dialog("Zeus:\n\nJe hebt alle proeven doorstaan.\nDat heb je goed gedaan.", () => {
                         zeus_dialog_2.hide();
 
-                        let ape_dialog_3 = new Dialog("Aapje:\n\nBedankt joe.", () => {
+                        let ape_dialog_3 = new Dialog("Aapje:\n\nBedankt!", () => {
                             ape_dialog_3.hide();
+
+                            let zeus_dialog_3 = new Dialog("Gefeliciteerd, je hebt het spel uitgespeeld!", () => {
+                                zeus_dialog_3.hide();
 
                             // Let the player walk again
                             aod.player.enableWalking();
