@@ -79,6 +79,7 @@ class Level1 {
         new Banaan(5825, 1000);
         aod.score = new Score();
         new Shell(2350, 1600)
+        new Shell(5650, 1600)
 
         this.startDialog = new Dialog("Een mystiek wezen staat\nin de verte op je te wachten.");
     }
@@ -116,7 +117,7 @@ class Level1 {
         this.startDialog.hide();
 
         // Prevent user from walking
-        aod.player.disableWalking();
+        aod.player.disableWalking(); 
 
         // Show talking dialog
         let ape_dialog_1 = new Dialog("Aapje:\n\nWow, wie ben jij?", () => {
