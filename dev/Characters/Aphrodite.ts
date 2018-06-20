@@ -13,7 +13,7 @@ class Aphrodite {
     create()
     {
         this.animations()
-        this.aphrodite = aod.playground.physics.add.sprite(700, 200, 'afro')
+        this.aphrodite = aod.playground.physics.add.sprite(700, 1200, 'afro')
         this.aphrodite.setScale(0.5);
         this.aphrodite.anims.play('afro');
         this.aphrodite.flipX = true

@@ -5,6 +5,7 @@ class Game {
     playground:object;
     banaan:Banaan;
     scene:any;
+    scoreBanaan:number = 0;
     
     soundEffects:any;
 

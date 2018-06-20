@@ -3,6 +3,8 @@ class Level1 {
     startDialog: Dialog;
     aphrodite: Aphrodite;
     talkingToAphrodite: boolean = false;
+    score: Score;
+
 
     constructor() {
 
@@ -67,12 +69,20 @@ class Level1 {
         aod.playground.cameras.main.startFollow(aod.player.player, true, 0.05, 0.05);
         //aod.playground.cameras.main.
         //aod.playground.cameras.main.setBounds(0, 0, 3000, 1260);
-
+        new Banaan(1000, 1500);
+        new Banaan(1100, 1200);
+        new Banaan(2525, 1500);
+        new Banaan(3250, 1200);
+        new Banaan(3525, 1000);
+        new Banaan(3900, 1500);
+        new Banaan(4100, 1000);
+        new Banaan(4500, 1000);
+        aod.score = new Score();
     }
 
     update() {
         aod.player.movement()
-        console.log(aod.player.player.y)
+            //console.log(aod.player.player.y)
         // if (aod.player.player.y >= 800) {
         //     aod.player.player.x = 125;
         //     aod.player.player.y = 200;
