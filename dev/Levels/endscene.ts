@@ -79,6 +79,7 @@ class Endscene {
                             // Let the player walk again
                             aod.player.enableWalking();
                             
+                            document.location.href = "./#menu";
                             document.location.reload();
                         });
                     });

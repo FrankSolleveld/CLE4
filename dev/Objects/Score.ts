@@ -21,7 +21,7 @@ class Score
 
 update(aantalBanaan){  
     this.tekst1.setText( aantalBanaan + "/10");
-
+    this.huidigeBanaan++;
 }
 
 }

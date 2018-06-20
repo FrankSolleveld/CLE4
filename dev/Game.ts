@@ -98,7 +98,11 @@ class Game {
     {
         aod.playground = this;
 
-        aod.scene = new Menu()
+        if(document.location.hash === "#lvl2") {
+            aod.scene = new Level2()
+        }else{
+            aod.scene = new Menu()
+        }
 
         aod.soundEffects = new SoundEffects();        
     }
@@ -106,7 +110,6 @@ class Game {
     update()
     {
         aod.scene.update()
-    
     }
 }
 

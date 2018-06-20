@@ -62,8 +62,6 @@ class Level1 {
         aod.playground.physics.add.overlap(aod.aphrodite.aphrodite, aod.player.player, this.hey, null, this);
         aod.playground.physics.world.setBounds(0, 0, 6271, 1664);
 
-        this.startDialog = new Dialog("Een mystiek wezen staat\nin de verte op je te wachten.");
-
         aod.playground.cameras.main.setBounds(0, 0, 6100, 1664);
 
         aod.playground.cameras.main.startFollow(aod.player.player, true, 0.05, 0.05);
@@ -80,16 +78,30 @@ class Level1 {
         new Banaan(5250, 1000);
         new Banaan(5825, 1000);
         aod.score = new Score();
-        new Shell(2350, 1500)
+        new Shell(2350, 1600)
+
+        this.startDialog = new Dialog("Een mystiek wezen staat\nin de verte op je te wachten.");
     }
 
     update() {
         aod.player.movement()
-            console.log(aod.player.player.x)
-        // if (aod.player.player.y >= 800) {
-        //     aod.player.player.x = 125;
-        //     aod.player.player.y = 200;
-        // }
+        
+        if (aod.player.player.x >= 5954) { //5954
+            aod.player.player.x -= 30;
+                    
+            if(aod.score.huidigeBanaan == 10) {
+                aod.player.disableWalking();
+            
+                let ape_dialog_1 = new Dialog("Aapje:\n\nYes ik heb het gehaald!\n\nOp naar het bos!", () => {
+                    document.location.hash = "#lvl2";
+                    document.location.reload();
+                });
+            }else{
+                let ape_dialog_1 = new Dialog("Aapje:\n\nIk heb nog niet genoeg bananen,\n\nnog even zoeken!", () => {
+                    ape_dialog_1.hide();
+                });
+            }
+        }
     }
 
     hey() {
@@ -104,7 +116,7 @@ class Level1 {
         this.startDialog.hide();
 
         // Prevent user from walking
-        //aod.player.disableWalking();
+        aod.player.disableWalking();
 
         // Show talking dialog
         let ape_dialog_1 = new Dialog("Aapje:\n\nWow, wie ben jij?", () => {
