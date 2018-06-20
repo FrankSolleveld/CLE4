@@ -7,6 +7,8 @@ class Artemis
     currentArrow:ArtemisArrow;
     arrowAngle:number = 0;
 
+    artemisWon:boolean = false;
+
     constructor()
     {
         this.artemisObject = aod.playground.physics.add.sprite(window.innerWidth - 250, window.innerHeight - 250, 'artemis');
@@ -17,6 +19,10 @@ class Artemis
         this.currentArrow = new ArtemisArrow();
 
         setInterval(() => this.shootArrow(), 1000);
+
+        setTimeout(() => {
+            this.currentArrow.init();
+        }, 400);
         
     }
 
@@ -37,7 +43,7 @@ class Artemis
 
     shootArrow()
     {
-        if(!this.canShoot) { return; }
+        if(!this.canShoot || this.artemisWon) { return; }
 
         // this.currentArrow.shoot();
 
@@ -47,12 +53,26 @@ class Artemis
             this.canShoot = true;
             this.currentArrow.remove();
             this.currentArrow = new ArtemisArrow();
+            this.currentArrow.init();
         }, 3000);
     }
 
     update()
     {
+        if(this.artemisWon) { return; }
+
         let playerY = aod.player.player.y - this.artemisBow.y;
+        let playerDistance = aod.player.player.x - this.artemisBow.x;
+
+        if((this.artemisBow.x - aod.player.player.x) < 100)
+        {
+            this.canShoot = false;
+            this.artemisWon = true;
+
+            aod.scene.won();
+
+            return;
+        }
 
         this.artemisBow.angle = playerY * -0.2;
 
@@ -63,12 +83,11 @@ class Artemis
             this.currentArrow.object.y = this.artemisBow.y - (playerY * -0.02);
             this.currentArrow.object.x = this.artemisBow.x - 10;
             this.currentArrow.object.angle = playerY * -0.2;
-            this.arrowAngle = playerY;
+            
+            this.currentArrow.setAngle(playerY);
+            this.currentArrow.setSpeed(playerDistance / 100);
         }else{
-            this.currentArrow.object.y -= this.arrowAngle * 0.2;
-            this.currentArrow.object.angle = this.arrowAngle * -0.2;
-            this.currentArrow.object.x -= 4;
+            this.currentArrow.update();
         }
-
     }
 }
